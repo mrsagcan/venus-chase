@@ -327,7 +327,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 343936692, guid: 0462cf90fbb76a3499e7dab59235f002, type: 3}
       propertyPath: mainThrust
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3260548684999684314, guid: 0462cf90fbb76a3499e7dab59235f002, type: 3}
       propertyPath: m_RootOrder
