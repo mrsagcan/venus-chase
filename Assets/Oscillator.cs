@@ -18,6 +18,10 @@ public class Oscillator : MonoBehaviour
     void Update()
     {
         //todo protect against divide by zero
+        if(period == Mathf.Epsilon)
+        {
+            period = 2f;
+        }
         float cycles = Time.time / period; //grows continually from zero
 
         const float tau = Mathf.PI * 2;
