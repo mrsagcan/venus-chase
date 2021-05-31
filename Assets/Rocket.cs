@@ -16,7 +16,7 @@ public class Rocket : MonoBehaviour
 
     private Rigidbody rigidbody;
     AudioSource mainSound;
-    bool collisionsDisabled = false;
+    bool collisionsDisabled = true;
 
     enum State { Alive, Dying, Transcending };
     State state = State.Alive;
@@ -116,7 +116,13 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1); // todo allow for more than two levels
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextLevelIndex = currentLevelIndex + 1;
+        if (currentLevelIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextLevelIndex = 0;
+        }
+        SceneManager.LoadScene(nextLevelIndex);
     }
 
     private void RespondToThrustInput()
